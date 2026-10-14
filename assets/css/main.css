@@ -4681,3 +4681,75 @@ input, select, textarea {
 		}
 
 	}
+
+/* Public plots: expandable plot set */
+
+	#main > .posts > article.plot-set:has(details[open]) {
+		width: 100%;
+	}
+
+	.plot-set details {
+		margin-top: 2rem;
+	}
+
+		.plot-set details > summary {
+			display: inline-block;
+			cursor: pointer;
+			list-style: none;
+			padding: 0 2rem;
+			line-height: 3rem;
+			border-radius: 0;
+			box-shadow: inset 0 0 0 2px #212931;
+			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			font-size: 0.8rem;
+			font-weight: 900;
+			letter-spacing: 0.075em;
+			text-transform: uppercase;
+			margin-bottom: 2rem;
+		}
+
+			.plot-set details > summary::-webkit-details-marker {
+				display: none;
+			}
+
+			.plot-set details > summary:hover {
+				box-shadow: inset 0 0 0 2px #18bfef;
+				color: #18bfef;
+			}
+
+			.plot-set details[open] > summary {
+				font-size: 0;
+			}
+
+				.plot-set details[open] > summary::after {
+					content: "Hide plots";
+					font-size: 0.8rem;
+				}
+
+		.plot-set .plot-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+			gap: 2rem;
+			margin-bottom: 2rem;
+		}
+
+			.plot-set .plot-grid figure {
+				margin: 0;
+			}
+
+			.plot-set .plot-grid img {
+				display: block;
+				width: 100%;
+				margin-bottom: 0.75rem;
+			}
+
+			.plot-set .plot-grid figcaption {
+				font-size: 0.9rem;
+				line-height: 1.5;
+			}
+
+		#main > .posts > article.plot-set:has(details[open]) > .image {
+			max-width: 32rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
